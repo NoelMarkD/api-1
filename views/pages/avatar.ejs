@@ -1,0 +1,29 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-avatar container">
+    <!-- <h2><%= name %></h2> -->
+    <section class="section section-avatar">
+        <div class="row">
+            <% data.forEach(item => { %>
+                <div class="avatarDiv col-md-4 mb-5 gx-4">
+                    <h3 class="setup">
+                        <a class="avatar-single-link" href="/avatar/characters:<%= item.id %>">   
+                            Click to View
+                        </a>
+                    </h3>
+                    <p class="name"><%= item.name %></p>
+                    <ul>
+                        <% if(Array.isArray(item.personalInformation['weaponsOfChoice'])) { %>
+                            <% item.personalInformation.weaponsOfChoice.forEach(weapon => { %>
+                                <li><%= weapon %></li>
+                            <% }) %> 
+                        <% } %>
+                    </ul>
+                </div>
+                
+            <% }); %>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>

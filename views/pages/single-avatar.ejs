@@ -1,0 +1,25 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-single container">
+    <section class="section section-single">
+        <!-- prev and next -->
+        <div class="prev-and-next d-flex justify-content-around">
+            <p class="prev">
+                <% if (data.id > 1) { %>
+                    <a href="/avatar/<%= data.id - 1 %>">Prev</a>
+                <% } %>
+    
+            </p>
+            <p class="next">
+                <%= count %>
+                <% if (data.id <= count) { %> 
+                    <a href="/avatar/<%= data.id + 1 %>">Next</a>
+                <% } %>
+            </p>
+        </div>
+        <!-- <h3 class="single-h3"><%= data.setup %></h3> -->
+        <p class="single-punch"><%= data.bio %></p>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>
